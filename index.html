@@ -47,13 +47,13 @@
 
         socket.on("message", addMessage);
 
-        function addMessages(message) {
+        function addMessage(message) {
             $("#messages").append(`<h4>${message.name}</h4> <p>${message.message}</p>`)
         }
 
         function getMessages(){
             $.get('http://127.0.0.1:5000/messages', (data) => {
-                data.forEach(addMessages);
+                data.forEach(addMessage);
             });
         }
 
